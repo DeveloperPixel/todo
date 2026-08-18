@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Tasks — Local Dev Environment</title>
+  <meta name="description" content="A gorgeous, high-performance Todo Dashboard built with FastAPI, PostgreSQL, and modern glassmorphic layout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="glass-bg"></div>
+  <main class="dashboard-container">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 11L12 14L22 4" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1>Aether Tasks</h1>
+      </div>
+      <p class="subtitle">FastAPI & PostgreSQL Development Workspace</p>
+    </header>
+
+    <section class="task-form-section">
+      <form id="todo-form" class="task-input-wrapper">
+        <input type="text" id="todo-input" placeholder="Create a new task..." required autocomplete="off">
+        <button type="submit" id="add-btn">
+          <span>Add Task</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </form>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat-card" id="stat-total">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-card" id="stat-completed">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-card" id="stat-pending">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+    </section>
+
+    <section class="list-section">
+      <div class="list-header">
+        <h2>Your Tasks</h2>
+        <div class="status-indicator">
+          <span class="indicator-dot"></span>
+          <span class="status-text">Postgres Connected</span>
+        </div>
+      </div>
+
+      <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+      </div>
+
+      <ul id="todo-list" class="todo-list">
+        <!-- Rendered dynamically -->
+      </ul>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">📂</div>
+        <h3>No tasks found</h3>
+        <p>Add a task above to begin managing your pipeline.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Local Stack: <code>FastAPI v0.100+</code> • <code>PostgreSQL 15</code> • <code>Docker Compose</code></p>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>
