@@ -13,7 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   web:
-    image: ${DOCKERHUB_USERNAME:-local}/aws-todo-web:latest
+    image: ${DOCKERHUB_USERNAME:-local}/todo-backend:latest
     build: .
     container_name: todo_web
     restart: always
